@@ -1,15 +1,22 @@
-package src;
+package com.testdomain;
 
 import org.junit.Test;
 import org.junit.Assert;
 import org.openjdk.jmh.annotations.Benchmark;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Palindrome {
-    public boolean isPalindrome(int x) {
+    public static int findNofDigits(int x) {
+        if (x == 0) {
+            return 0;
+        } else if (x < 0) {
+            return (int) (Math.log10(x * -1)) + 1;
+        } else {
+            return (int) (Math.log10(x)) + 1;
+        }
+    }
+    public static boolean isPalindrome(int x) {
 
         String Input = String.valueOf(x);
         int n = Input.length();
@@ -21,17 +28,7 @@ public class Palindrome {
         return true;
     }
 
-    public int findNofDigits(int x) {
-        if (x == 0) {
-            return 0;
-        } else if (x < 0) {
-            return (int) (Math.log10(x * -1)) + 1;
-        } else {
-            return (int) (Math.log10(x)) + 1;
-        }
-    }
-
-    public boolean isPalindromeNoStr(int x) {
+    public static boolean isPalindromeNoStr(int x) {
         if (x <= 0) {
             return false;
         }
@@ -52,6 +49,7 @@ public class Palindrome {
         }
         return true;
     }
+
 
 
     @Test
