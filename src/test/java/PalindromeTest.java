@@ -12,5 +12,4 @@ public class PalindromeTest {
         Assert.assertEquals(isPalindromeNoStr(9), true);
 
     }
-
 }
